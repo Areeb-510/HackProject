@@ -1,7 +1,10 @@
 package com.example.happyme;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -55,10 +58,59 @@ public class fragment_test extends Fragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_test, container, false);
+        View v = inflater.inflate(R.layout.fragment_test,container,false);
+
+        CardView vaccine = v.findViewById(R.id.vaccine);
+        CardView facts = v.findViewById(R.id.factsCard);
+        CardView symptoms = v.findViewById(R.id.symptomCard);
+        CardView diet = v.findViewById(R.id.dietCard);
+
+        facts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), facts_activity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        symptoms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), symptoms_activity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        diet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), diet_activity.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+
+
+        vaccine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://www.cowin.gov.in/";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+            }
+
+        });
+        return v;
     }
+
 }
