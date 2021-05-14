@@ -3,7 +3,7 @@
     package="com.example.happyme">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,16 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HappyMe">
-        <activity android:name=".AffectedCountries"></activity>
+        <activity android:name=".diet_activity"></activity>
+        <activity android:name=".symptoms_activity" />
+        <activity android:name=".facts_activity" />
+        <activity android:name=".AffectedCountries" />
         <activity android:name=".MemeActivity" />
         <activity android:name=".OpenCV" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".SignUpActivity">
-        </activity>
-        <activity android:name=".SplashScreenActivity">
-        </activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".SplashScreenActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".loginActivity" >
+        <activity android:name=".loginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
